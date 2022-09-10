@@ -38,4 +38,11 @@ mod tests {
     let p2 = Point { x: 3.0, y: 3.0 };
     assert_eq!(p1.distance(&p2), 0.0);
   }
+
+  #[test]
+  fn starting_point_doesnt_matter() {
+    let p1 = Point { x: 0.0, y: 0.0 };
+    let p2 = Point { x: 3.0, y: 4.0 };
+    assert_eq!(p2.distance(&p1), p1.distance(&p2));
+  }
 }
